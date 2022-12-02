@@ -1,1 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+// fonts
+@import url("https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&family=Fredoka+One&family=Miriam+Libre:wght@400;700&family=Molengo&display=swap");
+
+h1 {
+  font-family: "Dosis", sans-serif;
+  font-size: 4rem;
+}
+
+h2 {
+  font-family: "Fredoka One", cursive;
+  font-size: 4rem;
+}
+
+h3 {
+  font-family: "Molengo", sans-serif;
+  font-size: 4rem;
+}
+
+p {
+  font-family: "Miriam Libre", sans-serif;
+  font-size: 4rem;
+}
