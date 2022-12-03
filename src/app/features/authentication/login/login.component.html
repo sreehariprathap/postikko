@@ -1,13 +1,19 @@
-<div class="min-h-screen flex">
+<div class="min-h-screen flex ">
   <div class="w-6/12 min-h-screen flex justify-center items-center flex-col">
     <img
       src="assets/postikko-yellow.png"
       alt="postikko logo"
       class="postikko-image"
     />
-    <h2 class="text-2xl font-light">Post your queries, requests and needs</h2>
+    <h2 class="text-2xl font-light">
+      Post your <span class="hover-item">queries</span>,
+      <span class="hover-item">requests</span> and
+      <span class="hover-item">needs</span>.
+    </h2>
   </div>
-  <div class="shadow hover:shadow-xl p-5 px-10 xsm:w-full  lg:h-screen flex flex-col items-center gap-4 w-96 duration-200 ease-in lg:w-6/12">
+  <div
+    class="shadow hover:shadow-xl p-5 px-10 xsm:w-full lg:h-screen flex flex-col items-center gap-4 w-96 duration-200 ease-in lg:w-6/12"
+  >
     <h2 class="text-4xl text-center my-5 text-primary-blue">Login</h2>
     <div class="flex gap-5">
       <div class="btn btn-base-100 bg-slate-100">
@@ -33,42 +39,48 @@
       </div>
     </div>
     <div class="divider text-neutral">OR</div>
-    <div>
-      <form action="" class="flex flex-col gap-4">
-        <div class="form-control">
-          <label class="label">
-            <span class="label-text text-primary-blue font-medium text-lg"
-              >Email</span
-            >
-          </label>
-          <input
-            type="text"
-            placeholder="Enter email"
-            class="input-bordered input w-full max-w-xs placeholder:px-1"
-          />
-        </div>
-        <div class="form-control">
-          <label class="label">
-            <span class="label-text text-primary-blue font-medium text-lg"
-              >Password</span
-            >
-          </label>
-          <input
-            type="text"
-            placeholder="Enter password"
-            class="input w-full max-w-xs input-bordered placeholder:px-1"
-          />
-          <label class="label">
-            <a href="#" class="label-text-alt link link-hover text-white"
-              >Forgot password?</a
-            >
-          </label>
-        </div>
-      </form>
-    </div>
-    <div class="flex flex-col items-center">
-      <button class="btn btn-neutral">Login</button>
-    </div>
+    <form action="">
+      <div>
+        <form [formGroup]="loginForm" class="flex flex-col gap-4">
+          <div class="form-control">
+            <label class="label">
+              <span class="label-text text-primary-blue font-medium text-lg"
+                >Email</span
+              >
+            </label>
+            <input
+              type="text"
+              placeholder="Enter email"
+              class="input-bordered input w-full max-w-xs placeholder:px-1"
+              formControlName="email"
+            />
+          </div>
+          <div class="form-control">
+            <label class="label">
+              <span class="label-text text-primary-blue font-medium text-lg"
+                >Password</span
+              >
+            </label>
+            <input
+              type="text"
+              placeholder="Enter password"
+              class="input w-full max-w-xs input-bordered placeholder:px-1"
+              formControlName="password"
+            />
+            <label class="label">
+              <a
+                href="#"
+                class="label-text-alt link link-hover text-primary-blue"
+                >Forgot password?</a
+              >
+            </label>
+          </div>
+        </form>
+      </div>
+      <div class="flex flex-col items-center">
+        <button class="btn btn-neutral" (click)="signIn()" [disabled]="!loginForm.valid && !loginForm.dirty">Login</button>
+      </div>
+    </form>
     <div class="divider text-neutral">OR</div>
     <a
       class="text-lg font-semibold hover:underline text-primary-blue cursor-pointer mb-5"

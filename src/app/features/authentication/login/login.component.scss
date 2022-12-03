@@ -1,3 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 .postikko-image {
   width: 400px;
+  @apply hover:scale-105 duration-150 ease-in;
+}
+.hover-item {
+  @apply hover:underline hover:text-primary-blue duration-150 ease-in;
 }
