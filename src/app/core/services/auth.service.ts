@@ -27,4 +27,14 @@ export class AuthService {
     window.localStorage.clear();
     this.loggedInStatus = false;
   }
+
+  // Check the current status of login
+  isLoggedIn(): boolean {
+    const user = localStorage.getItem('accessToken');
+    if (user === null) {
+      return false;
+    }
+    this.loggedInStatus = true;
+    return true;
+  }
 }

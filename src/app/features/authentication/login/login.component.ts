@@ -21,6 +21,7 @@ export class LoginComponent  implements OnInit{
 
   ngOnInit() {
     this.initLoginForm();
+    this.auth.loggedInStatus ? this.router.navigate(['/dashboard']) : null
   }
 
   initLoginForm() {
@@ -38,8 +39,8 @@ export class LoginComponent  implements OnInit{
       localStorage.setItem('access_token', accessToken);
       localStorage.setItem('user_id', data.userId);
       this.auth.loggedInStatus = true;
-      this.toast.success('login successful');
-      this.router.navigate(['/dashboard/tabs/home']);
+      this.router.navigate(['/dashboard']);
+      // this.toast.success('login successful');
     });
   }
 }

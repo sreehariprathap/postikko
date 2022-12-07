@@ -1,0 +1,49 @@
+<div class="mt-5">
+  <h2 class="px-5 py-5 text-4xl">create a post</h2>
+  <div class="flex px-5">
+    <ul class="flex-none w-1/6">
+      <li
+        *ngFor="let category of categories"
+        class="px-5 py-3 item capitalize"
+        [ngClass]="{'item-selected': category.isSelected}"
+        (click)="setSelected(category)"
+      >
+        {{ category.name }}
+      </li>
+    </ul>
+    <div *ngIf="selected" class="grow">
+      <form action="" class="flex flex-col gap-5">
+        <div class="form-control input-wrapper">
+          <textarea
+            type="text"
+            placeholder="Enter Title"
+            class="input w-full titlebox overflow-hidden resize-y title-control"
+            formControlName="title"
+          ></textarea>
+        </div>
+        <div class="form-control input-wrapper">
+          <select class="input select w-full min-w-xl placeholder-select">
+            <option disabled selected >Select a sub category</option>
+            <option *ngFor="let category of selected.categories" class="capitalize">
+              {{ category }}
+            </option>
+          </select>
+        </div>
+        <div class="form-control input-wrapper">
+          <textarea
+            class="content textarea w-full"
+            placeholder="Type Content here"
+            formControlName="title"
+          ></textarea>
+        </div>
+      </form>
+      <div class="flex justify-center p-4">
+        <button class="btn btn-primary">Post</button>
+      </div>
+    </div>
+    <div *ngIf="!selected" class="grow flex flex-col justify-center items-center gap-4">
+      <h2 class="px-5 py-5 text-4xl">Please select a category to start</h2>
+      <img src="assets/select-category.svg" alt="select a category" class="w-96">
+    </div>
+  </div>
+</div>

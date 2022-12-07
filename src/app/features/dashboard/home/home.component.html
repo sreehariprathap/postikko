@@ -1,0 +1,18 @@
+<div class="flex">
+<!-- <div>
+  <app-sidebar></app-sidebar>
+</div> -->
+<div class="mt-5">
+  <section>
+    <h2 class=" px-5 py-5 text-4xl">what are you looking for ?</h2>
+    <div class="p-3 grid xsm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-5 justify-center flex-nowrap flex-1">
+      <div class="item" *ngFor="let category of categories"><p>{{category.name}}</p>
+        <ul class="flex flex-wrap gap-3">
+          <li class="category-item" *ngFor="let item of category.categories">{{item}}</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</div>
+
+</div>

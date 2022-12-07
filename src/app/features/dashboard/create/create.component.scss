@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.item {
+  @apply bg-slate-100 hover:border-l-4 hover:border-primary-yellow cursor-pointer hover:font-bold ease-in duration-200;
+}
+.item-selected {
+  @apply border-l-4 border-primary-yellow cursor-pointer font-bold ;
+}
+.titlebox {
+  font-weight: 700;
+  font-size: xx-large;
+  font-family: "Fredoka One", cursive;
+  &:focus {
+    outline: none;
+  }
+}
+.content,.select,.titlebox,.placeholder-select {
+  &:focus {
+    outline: none;
+  }
+  &::placeholder{
+    @apply text-slate-400;
+  }
+}
+.title-control{
+  height: 5rem;
+}
+.input-wrapper {
+  @apply border-b-2 border-b-primary-yellow
+}
+.placeholder-select{
+  @apply text-slate-400;
+}

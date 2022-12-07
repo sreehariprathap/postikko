@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.item {
+  @apply bg-inherit rounded-md border-2  cursor-pointer hover:bg-slate-100 ease-in duration-100 font-bold hover:border-yellow-300 p-5 border-l-4 hover:shadow-xl border-l-primary-yellow
+}
+.category-item {
+  @apply font-normal hover:font-medium hover:underline cursor-pointer ease-in duration-200;
+}
